@@ -23,7 +23,29 @@ The goals / steps of this project are the following:
 
 ### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
 
-My pipeline consisted of 5 steps. First, I converted the images to grayscale, then I .... 
+My pipeline consisted of 5 steps. 
+
+- First, I converted the images to grayscale to properly extract the lane lines. 
+
+![alt text](https://github.com/deepanshu96/carp1/blob/master/result/gray1.png)
+
+- In the next step I applied Guassian blur to the grayscale image in order to reduce the noise when 
+
+applying canny transformation to the image.
+
+![alt text](https://github.com/deepanshu96/carp1/blob/master/result/gray2.png)
+
+- Then in the next step I applied Canny transform to the image obtained so far.
+
+![alt text](https://github.com/deepanshu96/carp1/blob/master/result/gray3.png)
+
+- After obtaining the canny tranformed image, I masked the region of interest in which the road lanes were 
+
+present ( a trianglular area).
+
+![alt text](https://github.com/deepanshu96/carp1/blob/master/result/gray4.png)
+
+
 
 In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
 
