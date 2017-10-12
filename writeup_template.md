@@ -1,8 +1,3 @@
-# **Finding Lane Lines on the Road** 
-
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file. But feel free to use some other method and submit a pdf if you prefer.
 
 ---
 
@@ -10,12 +5,7 @@
 
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
-* Reflect on your work in a written report
-
-
-[//]: # (Image References)
-
-[image1]: ./examples/grayscale.jpg "Grayscale"
+* Apply the pipeline on the given videos (collection of images)
 
 ---
 
@@ -29,9 +19,7 @@ My pipeline consisted of 5 steps.
 
 ![alt text](https://github.com/deepanshu96/carp1/blob/master/result/gray1.png)
 
-- In the next step I applied Guassian blur to the grayscale image in order to reduce the noise when 
-
-applying canny transformation to the image.
+- In the next step I applied Guassian blur to the grayscale image in order to reduce the noise when applying canny transformation to the image.
 
 ![alt text](https://github.com/deepanshu96/carp1/blob/master/result/gray2.png)
 
@@ -39,20 +27,20 @@ applying canny transformation to the image.
 
 ![alt text](https://github.com/deepanshu96/carp1/blob/master/result/gray3.png)
 
-- After obtaining the canny tranformed image, I masked the region of interest in which the road lanes were 
-
-present ( a trianglular area).
+- After obtaining the canny tranformed image, I masked the region of interest in which the road lanes were present 
+( a trianglular area).
 
 ![alt text](https://github.com/deepanshu96/carp1/blob/master/result/gray4.png)
 
+- Finally I applied Hough transform to the masked image in order to detect prominent edge points of the lane line and construct the lane lines on an image with black background.
 
+![alt text](https://github.com/deepanshu96/carp1/blob/master/result/gray5.png)
 
-In order to draw a single line on the left and right lanes, I modified the draw_lines() function by ...
+- After performing all these steps, I merged the final Hough transformed image with the original image in order to get the detected lane lines.
 
-If you'd like to include images to show how the pipeline works, here is how to include an image: 
+![alt text](https://github.com/deepanshu96/carp1/blob/master/result/gray6.png)
 
-![alt text][image1]
-
+In the Hough transform step, 
 
 ### 2. Identify potential shortcomings with your current pipeline
 
