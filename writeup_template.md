@@ -1,7 +1,4 @@
-
----
-
-**Finding Lane Lines on the Road**
+## Finding Lane Lines on the Road
 
 The goals / steps of this project are the following:
 * Make a pipeline that finds lane lines on the road
@@ -11,9 +8,9 @@ The goals / steps of this project are the following:
 
 ### Reflection
 
-### 1. Describe your pipeline. As part of the description, explain how you modified the draw_lines() function.
+### 1. Pipeline Description
 
-My pipeline consisted of 5 steps. 
+My pipeline consisted of the following steps. 
 
 - First, I converted the images to grayscale to properly extract the lane lines. 
 
@@ -40,18 +37,16 @@ My pipeline consisted of 5 steps.
 
 ![alt text](https://github.com/deepanshu96/carp1/blob/master/result/gray6.png)
 
-In the Hough transform step, 
+In the Hough transform step, I called draw_lines2() function to calculate lines to the left and right side of the car and calculated the average slope and intersection constant on the left and right lanes respectively. After this I plotted the left and right lanes extrapolating them to the bottom of the image from their point of intersection.
 
 ### 2. Identify potential shortcomings with your current pipeline
 
+One potential shortcoming would be what would happen when the lane lines were curved that is the car was travelling on a curved road or taking a sharp turn. 
 
-One potential shortcoming would be what would happen when ... 
-
-Another shortcoming could be ...
-
+Moreover the lane line finding pipeline would be difficult to implement if there were more cars on the raod that is high traffic decsity might hinder the image detection process. 
 
 ### 3. Suggest possible improvements to your pipeline
 
-A possible improvement would be to ...
+A possible improvement would be to use non linear functions in order to detect the lane lines or hop between linear or non linear functions according to the requirements.
 
-Another potential improvement could be to ...
+More advanced techniques like deep forest or nueral networks could be used in order to detect lane lines accurately.
